@@ -1,0 +1,59 @@
+{
+    "source": "ehr-100",
+    "people": [
+        {
+            "ehr_id": 103,
+            "name": "Amanda Johnson",
+            "date_of_birth": "1990-01-01",
+            "contact_info": {
+                "email_address": "amanda.j@example.com",
+                "phone": "(555) 123-4567"
+            }
+        },
+        {
+            "ehr_id": 310,
+            "name": "Jordan Amy Smith",
+            "date_of_birth": "1994-08-22",
+            "contact_info": {
+                "email_address": "jordan.s@example.net",
+                "phone": "(555) 987-6543"
+            }
+        },
+        {
+            "ehr_id": 10928,
+            "name": "Carlos Rodriguez",
+            "date_of_birth": "1986-02-10",
+            "contact_info": {
+                "email_address": "carlos.r@example.org",
+                "phone": "(555) 321-7890"
+            }
+        },
+        {
+            "ehr_id": 870,
+            "name": "Emily Davis",
+            "date_of_birth": "2001-11-31",
+            "contact_info": {
+                "email_address": "emily.d@example.com",
+                "phone": "(555) 789-0123"
+            }
+        },
+        {
+            "ehr_id": 6749,
+            "name": "Michael Brown",
+            "date_of_birth": "1990-06-07",
+            "contact_info": {
+                "email_address": "michael.b@example.net",
+                "phone": "(555) 234-5678"
+            }
+        },
+        {
+            "ehr_id": 7239,
+            "name": "Sarah Miller",
+            "date_of_birth": "1990-09-28",
+            "contact_info": {
+                "email_address": "sarah.m@example.org",
+                "phone": "(555) 876-5432"
+            }
+        }
+    ]
+}
