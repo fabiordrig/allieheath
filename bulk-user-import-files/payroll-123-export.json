@@ -1,0 +1,69 @@
+{
+    "source": "payroll-123",
+    "users": [
+        {
+            "payroll_id": "c07c5596-4a57-472c-8167-7c35211a75ba",
+            "first_name": "Daniel",
+            "last_name": "Miller",
+            "email": "daniel.m@example.com",
+            "phone_number": "+18731234567",
+            "date_of_birth": "1997-03-18"
+        },
+        {
+            "payroll_id": "baa1661f-4903-4cd4-a3dc-36bc583a31d6",
+            "first_name": "Sophia",
+            "last_name": "Williams",
+            "email": "sophia.w@email.net",
+            "phone_number": "+18734098765",
+            "date_of_birth": "1985-11-05"
+        },
+        {
+            "payroll_id": "6bb87810-6cc1-455d-a63b-90080f4da840",
+            "first_name": "Ethan",
+            "last_name": "Brown",
+            "email": "ethan.b@example.org",
+            "phone_number": "+18737654321",
+            "date_of_birth": "2002-07-23"
+        },
+        {
+            "payroll_id": "b8ee3e3f-3bb2-4eaa-b56c-190d2cfc2865",
+            "first_name": "Olivia",
+            "last_name": "Davis",
+            "email": "olivia.d@email.co",
+            "phone_number": "+18738901234",
+            "date_of_birth": "1991-09-14"
+        },
+        {
+            "payroll_id": "607cf37e-ba2d-4051-a1fb-c07dde303d97",
+            "first_name": "Lucas",
+            "last_name": "Taylor",
+            "email": "lucas.t@example.net",
+            "phone_number": "+18739876543",
+            "date_of_birth": "1999-05-30"
+        },
+        {
+            "payroll_id": "65f23d54-b0f8-4cc4-aed9-78cf384608b6",
+            "first_name": "Ava",
+            "last_name": "Jackson",
+            "email": "ava.j@example.com",
+            "phone_number": "+18732109876",
+            "date_of_birth": "2008-02-11"
+        },
+        {
+            "payroll_id": "76b7bb4a-7f8c-408a-87f4-e41bdfa233de",
+            "first_name": "Liam",
+            "last_name": "Anderson",
+            "email": "liam.a@email.org",
+            "phone_number": "+18733456789",
+            "date_of_birth": "1996-12-04"
+        },
+        {
+            "payroll_id": "6e8788f3-be5f-4b29-9510-2b71bce9a142",
+            "first_name": "Mia",
+            "last_name": "Clark",
+            "email": "mia.c@example.co",
+            "phone_number": "+18735467890",
+            "date_of_birth": "1988-08-27"
+        }
+    ]
+}
