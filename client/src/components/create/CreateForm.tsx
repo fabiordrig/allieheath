@@ -17,9 +17,15 @@ const CreateForm = ({ onSubmit }: Props) => {
   );
 
   const onFormSubmit = async (data: FieldValues) => {
-    await executePost({ data });
-    onSubmit();
+    try {
+      await executePost({ data });
+      onSubmit();
+    } catch (e) {
+      console.error(e);
+    }
   };
+
+  const invalidEmailError = error?.response?.data?.error === "Invalid email";
 
   return (
     <>
@@ -31,7 +37,10 @@ const CreateForm = ({ onSubmit }: Props) => {
             gap: 1,
           }}
         >
-          {error && (
+          {loading && <Alert severity="info">Creating user...</Alert>}
+          {invalidEmailError ? (
+            <Alert severity="error">Invalid email address</Alert>
+          ) : (
             <Alert severity="error">
               Sorry - there was an error creating the user
             </Alert>
