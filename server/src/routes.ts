@@ -1,7 +1,7 @@
 import { Request, Response, Router } from "express";
-import { db } from "./db";
 import multer from "multer";
 import os from "os";
+import { db } from "./db";
 
 const router = Router();
 
@@ -21,14 +21,38 @@ router.post("/users", (req: Request, res: Response) => {
     return;
   }
 
+  const validEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!validEmailRegex.test(req.body.email)) {
+    res.status(400).send({
+      error: "Invalid email",
+    });
+    return;
+  }
+  const dateOfBirth = !!req.body.dateOfBirth ? req.body.dateOfBirth : null;
+  const phoneNumber = !!req.body.phoneNumber ? req.body.phoneNumber : null;
+
+  if (
+    db.prepare("SELECT * FROM users WHERE email = @email").get({
+      email: req.body.email,
+    })
+  ) {
+    res.status(400).send({
+      error: "Email already exists",
+    });
+    return;
+  }
+
   const user = db
     .prepare(
-      "INSERT INTO users (first_name, last_name, email) VALUES (@firstName, @lastName, @email)",
+      "INSERT INTO users (first_name, last_name, email, date_of_birth, phone_number) VALUES (@firstName, @lastName, @email, @dateOfBirth, @phoneNumber)",
     )
     .run({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
+      dateOfBirth,
+      phoneNumber,
     });
 
   res.json({

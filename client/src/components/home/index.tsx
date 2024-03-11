@@ -1,10 +1,10 @@
 import { Box, Button, CircularProgress } from "@mui/material";
 import useAxios from "axios-hooks";
 import { useState } from "react";
-import UsersTable from "./UsersTable";
-import MessageContainer from "./MessageContainer";
 import CreateUserModal from "../create";
+import MessageContainer from "./MessageContainer";
 import UploadInput from "./UploadInput";
+import UsersTable from "./UsersTable";
 
 const Home = () => {
   const [isCreateUserOpen, setIsCreateUserOpen] = useState(false);
@@ -51,6 +51,7 @@ const Home = () => {
       <CreateUserModal
         open={isCreateUserOpen}
         handleClose={() => setIsCreateUserOpen(!isCreateUserOpen)}
+        refetch={refetch}
       />
     </>
   );

@@ -4,9 +4,10 @@ import { FieldValues, useForm } from "react-hook-form";
 
 type Props = {
   onSubmit: () => void;
+  refetch: () => void;
 };
 
-const CreateForm = ({ onSubmit }: Props) => {
+const CreateForm = ({ onSubmit, refetch }: Props) => {
   const { register, handleSubmit } = useForm();
   const [{ loading, error }, executePost] = useAxios(
     {
@@ -19,7 +20,10 @@ const CreateForm = ({ onSubmit }: Props) => {
   const onFormSubmit = async (data: FieldValues) => {
     await executePost({ data });
     onSubmit();
+    refetch();
   };
+
+  const invalidEmailError = error?.response?.data?.error === "Invalid email";
 
   return (
     <>
@@ -31,9 +35,12 @@ const CreateForm = ({ onSubmit }: Props) => {
             gap: 1,
           }}
         >
+          {loading && <Alert severity="info">Creating user...</Alert>}
           {error && (
             <Alert severity="error">
-              Sorry - there was an error creating the user
+              {invalidEmailError
+                ? "Invalid email address"
+                : "Sorry - there was an error creating the user"}
             </Alert>
           )}
           <TextField
@@ -47,6 +54,20 @@ const CreateForm = ({ onSubmit }: Props) => {
             {...register("lastName")}
           />
           <TextField label="Email" variant="outlined" {...register("email")} />
+          <TextField
+            label="Date of Birth"
+            variant="outlined"
+            type="date"
+            InputLabelProps={{
+              shrink: true,
+            }}
+            {...register("dateOfBirth")}
+          />
+          <TextField
+            label="Phone Number"
+            variant="outlined"
+            {...register("phoneNumber")}
+          />
           <Button variant="contained" type="submit" disabled={loading}>
             Create User
           </Button>
